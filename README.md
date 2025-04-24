@@ -57,7 +57,7 @@ pip install git+https://github.com/Kaya-Kaya/rag-eval
 
 Here is an example of how to implement a custom LLM:
 ```python
-from src.rag_pipeline import LLM
+from rag_eval.rag_pipeline import LLM
 
 class MyLLM(LLM):
     def chat(self, user_message: dict):
