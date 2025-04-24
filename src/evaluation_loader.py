@@ -4,7 +4,7 @@ from deepeval import evaluate
 from deepeval.metrics import AnswerRelevancyMetric, FaithfulnessMetric
 from deepeval.test_case import LLMTestCase
 
-from rag_pipeline import LLM
+from .rag_pipeline import LLM
 
 class Evaluator():
     def __init__(self, llm: LLM, eval_json_path: str = "tests.json"):

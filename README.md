@@ -15,16 +15,10 @@ This project provides a framework for evaluating Retrieval-Augmented Generation 
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/rag-eval.git
-   cd rag-eval
-   ```
-
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+Install the package using pip:
+```bash
+pip install git+https://github.com/Kaya-Kaya/rag-eval
+```
 
 ## Usage
 
@@ -44,9 +38,19 @@ This project provides a framework for evaluating Retrieval-Augmented Generation 
    ]
    ```
 
-3. Run the evaluation:
-   ```bash
-   python -m src.evaluation_loader
+3. Use the `Evaluator` class to run the evaluation:
+   ```python
+   from rag_eval.evaluation_loader import Evaluator
+   from rag_eval.rag_pipeline import LLM
+
+   class MyLLM(LLM):
+       def chat(self, user_message: dict):
+           # Implement your LLM logic here
+           return "Example response"
+
+   llm = MyLLM()
+   evaluator = Evaluator(llm, eval_json_path="tests.json")
+   evaluator.run_evaluations()
    ```
 
 ## Example
