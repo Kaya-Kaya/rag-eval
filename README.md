@@ -53,18 +53,6 @@ pip install git+https://github.com/Kaya-Kaya/rag-eval
    evaluator.run_evaluations()
    ```
 
-## Example
-
-Here is an example of how to implement a custom LLM:
-```python
-from rag_eval.rag_pipeline import LLM
-
-class MyLLM(LLM):
-    def chat(self, user_message: dict):
-        # Implement your LLM logic here
-        return "Example response"
-```
-
 ## License
 
 This project is licensed under the MIT License.
