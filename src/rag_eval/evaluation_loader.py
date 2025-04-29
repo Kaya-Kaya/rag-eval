@@ -21,7 +21,7 @@ class Evaluator():
 
         test_cases = []
         metrics = [
-            AnswerRelevancyMetric(threshold=0.7),
+            AnswerRelevancyMetric(threshold=0.7, model="gpt-4o-mini"),
         ]
 
         for idx, eval_item in enumerate(evaluations):
