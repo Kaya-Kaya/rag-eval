@@ -67,6 +67,7 @@ pip install git+https://github.com/Kaya-Kaya/rag-eval
    pipeline = MyRAGPipeline()
    llm = MyLLM()
    evaluator = Evaluator(llm, pipeline, eval_json_path="tests.json")
+   evaluator.get_llm_responses()
    evaluator.run_evaluations()
    ```
 
