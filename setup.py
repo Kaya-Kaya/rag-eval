@@ -8,7 +8,7 @@ setup(
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
-        "deepeval>=2.7.6",
+        "deepeval==2.7.6",
     ],
     python_requires=">=3.9",
     classifiers=[
