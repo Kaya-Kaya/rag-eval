@@ -44,6 +44,10 @@ class Evaluator():
             except Exception as e:
                 print(f"Error processing question {idx + 1}: {str(e)}")
 
+        # Save test cases to a file
+        with open("test_cases.json", "w") as f:
+            json.dump(test_cases, f)
+
         # Run evaluations
         evaluate(test_cases, metrics=metrics)
         print("\nEvaluation Complete!")
