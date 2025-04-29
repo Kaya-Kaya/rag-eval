@@ -41,10 +41,15 @@ pip install git+https://github.com/Kaya-Kaya/rag-eval
 3. Use the `Evaluator` class to run the evaluation:
    ```python
    from rag_eval.evaluation_loader import Evaluator
-   from rag_eval.rag_pipeline import LLM
+   from rag_eval.rag_pipeline import LLM, RAGPipeline
+
+   class MyRAGPipeline(RAGPipeline):
+       def obtain_query_with_documents(self, query: str, k: int = 3) -> dict:
+           # Construct message with added documents here
+           return {"role": "user", "content": [{"type": "text", "text": "Document"}, {"type": "text", "text": query}]}
 
    class MyLLM(LLM):
-       def chat(self, user_message: dict):
+       def chat(self, user_message: dict) -> str:
            # Implement your LLM logic here
            return "Example response"
 

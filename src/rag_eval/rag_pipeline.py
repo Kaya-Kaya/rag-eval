@@ -19,5 +19,5 @@ class RAGPipeline(ABC):
   
 class LLM(ABC):
     @abstractmethod
-    def chat(self, user_message: Dict):
+    def chat(self, user_message: Dict) -> str:
         pass
