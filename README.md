@@ -45,8 +45,8 @@ pip install git+https://github.com/Kaya-Kaya/rag-eval
 
    class MyRAGPipeline(RAGPipeline):
        def search(self, query: str, k: int = 3) -> list:
-            # Implement RAG search here
-            return ["Document 1", "Document 2", "Document 3"]
+           # Implement RAG search here
+           return ["Document 1", "Document 2", "Document 3"]
    
        def obtain_query_with_documents(self, query: str, k: int = 3) -> dict:
            # Construct message with added documents here
