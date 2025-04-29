@@ -46,7 +46,13 @@ pip install git+https://github.com/Kaya-Kaya/rag-eval
    class MyRAGPipeline(RAGPipeline):
        def obtain_query_with_documents(self, query: str, k: int = 3) -> dict:
            # Construct message with added documents here
-           return {"role": "user", "content": [{"type": "text", "text": "Document"}, {"type": "text", "text": query}]}
+           return {
+               "role": "user", "content": [
+                   {"type": "text", "text": "Document 1"}, 
+                   {"type": "text", "text": "Document 2"},
+                   {"type": "text", "text": query}
+               ]
+           }
 
    class MyLLM(LLM):
        def chat(self, user_message: dict) -> str:
