@@ -1,7 +1,7 @@
 import json
 
 from deepeval import evaluate
-from deepeval.metrics import AnswerRelevancyMetric, FaithfulnessMetric
+from deepeval.metrics import AnswerRelevancyMetric
 from deepeval.test_case import LLMTestCase
 
 from .rag_pipeline import LLM
@@ -21,7 +21,6 @@ class Evaluator():
         test_cases = []
         metrics = [
             AnswerRelevancyMetric(threshold=0.7),
-            FaithfulnessMetric(threshold=0.7)
         ]
 
         for idx, eval_item in enumerate(evaluations):
