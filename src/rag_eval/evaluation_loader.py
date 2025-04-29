@@ -67,7 +67,7 @@ class Evaluator():
                 ],
                 #criteria="Determine if the 'actual output' is factually correct based on the 'expected output'. Do not penalize for different format, structure, wording or unncessary information as long as the fact provided is correct"
                 model="gpt-4o-mini",
-                evaluation_params=[LLMTestCaseParams.ACTUAL_OUTPUT, LLMTestCaseParams.EXPECTED_OUTPUT],
+                evaluation_params=[LLMTestCaseParams.INPUT, LLMTestCaseParams.ACTUAL_OUTPUT, LLMTestCaseParams.EXPECTED_OUTPUT],
                 threshold=0.5
             )
         ]
