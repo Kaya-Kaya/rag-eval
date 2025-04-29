@@ -4,12 +4,13 @@ from deepeval import evaluate
 from deepeval.metrics import AnswerRelevancyMetric
 from deepeval.test_case import LLMTestCase
 
-from .rag_pipeline import LLM
+from .rag_pipeline import LLM, RAGPipeline
 
 class Evaluator():
-    def __init__(self, llm: LLM, eval_json_path: str = "tests.json"):
+    def __init__(self, llm: LLM, pipeline: RAGPipeline, eval_json_path: str = "tests.json"):
         self.eval_json_path = eval_json_path
         self.llm = llm
+        self.pipeline = pipeline
 
     def load_evaluations(self, json_path: str) -> list:
         with open(json_path, 'r') as f:
@@ -26,7 +27,7 @@ class Evaluator():
         for idx, eval_item in enumerate(evaluations):
             try:
                 # Get LLM response
-                response = self.llm.chat(eval_item['Q'])
+                response = self.llm.chat(self.pipeline.obtain_query_with_documents(eval_item['Q']))
 
                 # Create test case
                 test_case = LLMTestCase(
