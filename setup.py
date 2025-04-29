@@ -10,7 +10,7 @@ setup(
     install_requires=[
         "deepeval>=2.7.6",
     ],
-    python_requires=">=3.12",
+    python_requires=">=3.9",
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
